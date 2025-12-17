@@ -91,3 +91,66 @@ CUDA 사용 가능 시 실행 속도가 크게 향상된다.
 ⚠️ 저작권 및 용량 문제로  
 원본 영상 및 프레임 데이터는 GitHub에 업로드하지 않음
 
+---
+
+## 6. 단계별 실행 방법 (핵심)
+
+### STEP 1. SwinIR x4 (1차 Super-Resolution)
+> 저해상도 프레임을 입력으로 받아 1차 HR 프레임을 생성한다.
+> 
+> 📄 참고 문서: scripts/02_swinir_x4.md
+
+```bat
+python main_test_swinir.py ...
+```
+
+### STEP 2. CodeFormer (얼굴 복원 + 자동 crop & merge)
+> SwinIR 결과 프레임에서 얼굴을 자동으로 검출하여 crop 후 복원하고, 복원된 얼굴을 원본 프레임에 다시 병합한다.<br>
+> 내부 과정에서 `cropped_faces`, `restored_faces`, `final_results` 폴더가 자동 생성된다.<br>
+>
+> 📄 참고 문서: scripts/03_codeformer_facesr.md
+
+```bat
+python inference_codeformer.py ^
+ -i <SwinIR 결과 폴더> ^
+ -o <CodeFormer 출력 폴더> ^
+ -w 0.95 ^
+ --bg_upsampler none ^
+ --face_upsample
+```
+
+### STEP 3. Real-ESRGAN (최종 HR 프레임 생성)
+> CodeFormer 결과 프레임을 입력으로 받아
+> 전체 프레임 단위의 최종 HR 영상을 생성한다.
+>
+> 📄 참고 문서: scripts/04_realesrgan_final.md
+
+```bat
+python inference_realesrgan.py ^
+ -n RealESRGAN_x4plus ^
+ -i <CodeFormer final_results> ^
+ -o <최종 HR 결과> ^
+ --outscale 1
+```
+
+### STEP 4. 타겟 얼굴 탐지 및 식별 (InsightFace)
+>📄 참고 문서: scripts/05_detection_tracking.md
+
+#### (1) 단일 타겟 (reference 이미지 여러 장)
+
+> 여러 장의 reference 얼굴 이미지를 사용하여  
+> 평균 embedding을 생성한 뒤 타겟 인물을 탐지한다.
+
+```bat
+python detection\onetarget_multi.py
+```
+
+#### (2) 다중 타겟
+
+> 여러 명의 타겟 얼굴을 각각 등록하여
+> 프레임 내 모든 얼굴과 비교한다.
+
+```bat
+python detection\multitarget.py
+```
+
