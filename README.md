@@ -154,3 +154,7 @@ python detection\onetarget_multi.py
 python detection\multitarget.py
 ```
 
+### 판별 기준
+
+- **cosine similarity ≥ threshold** → 🟩 초록 박스 (**FOUND**)
+- **cosine similarity < threshold** → 🟥 빨강 박스 (**Unknown**)
