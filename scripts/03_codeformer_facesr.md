@@ -39,8 +39,7 @@ cd /d C:\Users\hcwon\CodeFormer
 
 ```bat
 python inference_codeformer.py ^
--i "C:\Users\hcwon\KEEP\video_swin2sr_x4" ^
--o "C:\Users\hcwon\KEEP\video_swin2sr_x4_faceSR" ^
--w 0.95 ^
---bg_upsampler none ^
---face_upsample
+  -i "C:\Users\hcwon\KEEP\video_swin2sr_x4" ^
+  -o "C:\Users\hcwon\KEEP\video_swin2sr_x4_faceSR" ^
+  -w 0.98 ^
+  --bg_upsampler none
