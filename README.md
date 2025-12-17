@@ -182,7 +182,7 @@ python detection\multitarget.py
 
 ---
 
-## 7. Experimental Results
+## 8. Experimental Results
 
 ### Experiment 1. Single Reference Image per Target
 
@@ -218,3 +218,28 @@ Super-Resolution 적용 후 얼굴 특징이 개선되어 단일 reference 조�
 얼굴 방향 변화에도 보다 **안정적인 타겟 얼굴 탐지 성능**을 확인할 수 있었다.
 
 ---
+
+### Experiment 3. Multi-Target Face Detection (7 Targets, 1 Reference Each)
+
+본 실험에서는 **총 7명의 서로 다른 인물을 타겟으로 설정**하고, 각 인물당 **reference 이미지 1장씩만 사용**하여  
+다중 타겟 얼굴 탐지 성능을 확인하였다.
+
+- **Reference images (7 targets, 1 image per target)**  
+
+<p align="center">
+  <img src="assets/photos/target1.png" width="120"/>
+  <img src="assets/photos/target2.png" width="120"/>
+  <img src="assets/photos/target3.png" width="120"/>
+  <img src="assets/photos/target4.png" width="120"/>
+  <img src="assets/photos/target5.png" width="120"/>
+  <img src="assets/photos/target6.png" width="120"/>
+  <img src="assets/photos/target7.png" width="120"/>
+</p>
+
+| **Input video (Low-Resolution)** | **Output video (High-Resolution + Detection)** |
+|:--:|:--:|
+| ![](assets/videos/train_multi_lr.gif) | ![](assets/videos/train_multi_hr.gif) |
+
+**Description**  
+각 인물당 reference 이미지가 1장으로 제한된 조건에서도 Super-Resolution 기반 파이프라인을 통해  
+다수의 타겟 얼굴을 동시에 탐지할 수 있음을 확인하였다.  
