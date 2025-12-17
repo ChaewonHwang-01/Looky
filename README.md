@@ -1,2 +1,3 @@
-# Looky
-CCTV-Based Super-Resolution Person Tracking System
+# 📌 Looky
+
+### Low-Resolution Video Super-Resolution based Missing Person Search System
