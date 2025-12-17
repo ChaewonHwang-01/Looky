@@ -187,7 +187,7 @@ python detection\multitarget.py
 ### Experiment 1. Single Reference Image per Target
 
 - **Reference image (1 per target)**  
-  `assets/photos/train_unit.jpg`
+  ![Reference Image](assets/photos/train_unit.png)
 
 | **Input video (Low-Resolution)** | **Output video (High-Resolution + Detection)** |
 |:--:|:--:|
