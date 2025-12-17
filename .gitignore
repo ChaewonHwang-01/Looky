@@ -205,3 +205,33 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# =========================
+# Looky Project (SR Pipeline)
+# =========================
+
+# Deep Learning model weights
+*.pth
+*.ckpt
+*.onnx
+*.pt
+
+# Video frames & SR results
+frames/
+frames_*/
+video_*/
+results/
+outputs/
+output/
+
+# Dataset / raw videos
+data/
+dataset/
+datasets/
+*.mp4
+*.avi
+*.mov
+
+# Logs
+logs/
+*.log
