@@ -59,7 +59,8 @@ Looky/
 │  └─ multitarget.py           # 다중 타겟 얼굴 인식
 │
 ├─ assets/                     # 결과 시각화 및 예시 파일
-│  └─ videos/            
+│  ├─ photos/
+│  └─ videos/           
 │
 ├─ environment.yml             # Anaconda 실행 환경 설정 파일
 ├─ .gitignore                  
