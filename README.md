@@ -6,7 +6,7 @@
 
 | Before (Low-Resolution) | After (Super-Resolution) |
 |:--:|:--:|
-| ![](assets/videos/before.gif) | ![](assets/videos/after.gif) |
+| ![](assets/videos/test_lr.gif) | ![](assets/videos/test_hr.gif) |
 
 ## 1. 프로젝트 개요 (Overview)
 
