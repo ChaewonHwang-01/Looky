@@ -18,15 +18,16 @@ InsightFace(ArcFace embedding)를 이용해 **타겟 인물과 유사도(cosine 
 ## 1) 입력/출력 예시 경로 (권장)
 > 실행 편의를 위해 **절대경로 대신 상대경로**를 권장한다.
 
-예시 구조:
-data/
-├─ targets/
-│ ├─ target1.jpg
-│ ├─ target2.jpg
-└─ videos/
-└─ highvideo.mp4
-outputs/
-└─ output.mp4
+### 예시 구조
+
+    data/
+    ├─ targets/
+    │  ├─ target1.jpg
+    │  └─ target2.jpg
+    ├─ videos/
+    │  └─ highvideo.mp4
+    └─ outputs/
+       └─ output.mp4
 
 ---
 
