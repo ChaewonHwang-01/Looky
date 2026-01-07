@@ -4,8 +4,8 @@
 InsightFace(ArcFace embedding)를 이용해 **타겟 인물과 유사도(cosine similarity)를 계산**하고,
 임계값(threshold) 기준으로 바운딩 박스를 표시한다.
 
-- 유사도 ≥ threshold → **초록 박스(FOUND)**
-- 유사도 < threshold → **빨강 박스(Unknown)**
+- 유사도 ≥ threshold → **🟩 초록 박스(FOUND)**
+- 유사도 < threshold → **🟥 빨강 박스(Unknown)**
 
 ---
 
